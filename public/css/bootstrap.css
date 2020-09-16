@@ -10260,4 +10260,29 @@ a.text-dark:hover, a.text-dark:focus {
 .create-btn{
   margin-top: 15px
 }
+
+#messages{
+  margin: 10px;
+}
+
+#messages ul{
+  padding: 0;
+  margin: 0;
+}
+
+#messages li{
+  list-style: none;
+  padding: 10px;
+}
+
+#messages .success{
+  background: green;
+  color: white;
+}
+
+#messages .error{
+  background: red;
+  color: white;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

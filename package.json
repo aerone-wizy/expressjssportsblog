@@ -10,13 +10,13 @@
   "author": "aerone",
   "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "express": "*",
-    "mongoose": "*",
-    "pug": "*",
-    "connect-flash": "*",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
-    "moment": "*"
+    "moment": "*",
+    "mongoose": "*",
+    "pug": "*"
   }
 }

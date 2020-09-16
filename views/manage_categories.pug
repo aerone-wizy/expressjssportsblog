@@ -6,7 +6,8 @@ block content
             .col-md-9
                 h1 #{title}
             .col-md-3
-                a.btn.btn-default.create-btn(href="/manage/categories/add") Add Category
+                a.btn.btn-light.create-btn(href="/manage/categories/add") Add Category
+        != messages()
         table(class='table table-striped')
             tr
                 th Category Title
@@ -15,4 +16,4 @@ block content
                 tr 
                     td #{category.title}
                     td
-                        a(class="btn btn-tiny btn-default" href=`/manage/categories/edit/${category._id}`) Edit
+                        a(class="btn btn-tiny btn-light" href=`/manage/categories/edit/${category._id}`) Edit

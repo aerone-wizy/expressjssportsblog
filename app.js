@@ -29,34 +29,18 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 //set static folder
 app.use(express.static(path.join(__dirname, "public")))
-
+//Express session
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true
+}))
+//Express messages
 app.use(require('connect-flash')())
 app.use((req, res, next) => {
     res.locals.messages = require('express-messages')(req, res)
     next()
 })
-
-// app.use(expressValidator({
-//     errorFormatter: (param, msg, value) => {
-//         const namespace = param.split('.')
-//         , root = namespace.shift()
-//         , fromParam = root
-
-//         while(namespace.length){
-//             formParam += "[" + namespace.shift() + "]"
-//         }
-
-//         return {
-//             param : fromParam,
-//             msg : msg,
-//             value : value
-//         }
-//     }
-// }))
-
-// app.get('/', (req, res, next) => {
-//     res.send('Hello')
-// })
 
 app.use("/", index)
 app.use("/articles", articles)

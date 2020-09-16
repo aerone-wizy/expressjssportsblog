@@ -1,6 +1,7 @@
 const express = require('express');
 const category = require('../models/category');
 const router = express.Router();
+var flash = require('connect-flash');
 
 const { body, validationResult } = require('express-validator');
 const article = require('../models/article');
@@ -43,6 +44,7 @@ router.post('/add', [
         Category.addCategory(category, (err, category) => {
             if (err) res.send(err)
 
+            req.flash('success', 'Category Saved')
             res.redirect('/manage/categories')
         })
     }
@@ -71,7 +73,7 @@ router.post('/edit/:id', [
         Category.updateCategory(query, update, {}, (err, category) => {
             if (err) res.send(err)
 
-            // res.flash('success', 'Category Saved')
+            req.flash('success', 'Category Updated')
             res.redirect('/manage/categories')
         })
     }
