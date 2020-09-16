@@ -1,11 +1,22 @@
 {
   "name": "sportsblog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple sports blog app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
   },
   "author": "aerone",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "pug": "*",
+    "connect-flash": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "moment": "*"
+  }
 }
